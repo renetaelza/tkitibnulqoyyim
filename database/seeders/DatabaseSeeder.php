@@ -15,11 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Required data only. For dummy data run:
+        // php artisan db:seed --class=Database\\Seeders\\DummyTestingSeeder
+        $this->call(CoreRequiredSeeder::class);
     }
 }
